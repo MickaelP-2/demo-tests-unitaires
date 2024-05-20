@@ -15,6 +15,20 @@ public final class StringUtils {
 	 * @return distance
 	 */
 	public static int levenshteinDistance(CharSequence lhs, CharSequence rhs) {
+		try {
+			lhs.equals(null);
+		}
+		catch(Exception e) {
+			System.out.println("Initialiser la variable gauche!!");
+			return 0;
+		}
+		try {
+			rhs.equals(null) ;
+		}
+		catch(Exception e) {
+			System.out.println("Initialiser la variable droite!!");
+			return 0;
+		}
 		int len0 = lhs.length() + 1;
 		int len1 = rhs.length() + 1;
 

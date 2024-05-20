@@ -5,6 +5,7 @@ package fr.diginamic.enumerations;
  * @author DIGINAMIC
  *
  */
+
 public enum Saison {
 
 	/** Les 4 instances de Saison */
@@ -32,22 +33,25 @@ public enum Saison {
 	 * @param libelle libellé
 	 * @return {@link Saison}
 	 */
-	public static Saison valueOfLibelle(String libelle) {
+	public static Saison valueOfLibelle(String libelle) {//static Saison
+		
 		Saison[] saisons = Saison.values();
 		for (Saison saison : saisons) {
 			if (libelle.equals(saison.getLibelle())) {
 				return saison;
 			}
+			/*
 			else {
 				return null;
 			}
+			*/
 		}
 		return null;
 	}
 
 	@Override
 	public String toString() {
-		return ordre + ". " + libelle;
+		return this.ordre + ". " + this.libelle;
 	}
 
 	/**

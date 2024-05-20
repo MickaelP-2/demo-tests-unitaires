@@ -21,10 +21,10 @@ public abstract class Piece {
 	/** TYPE_CUISINE : String*/
 	public static final String TYPE_CUISINE = "Cuisine";
 	
-	/** TYPE_CUISINE : String*/
+	/** TYPE_WC : String*/
 	public static final String TYPE_WC = "WC";
 	
-	/** TYPE_CUISINE : String*/
+	/** TYPE_SALLE_DE_BAIN : String*/
 	public static final String TYPE_SDB = "Salle de bain";
 	
 	/** Constructeur
@@ -32,8 +32,14 @@ public abstract class Piece {
 	 * @param superficie superficie
 	 */
 	public Piece(int etage, double superficie) {
-		this.numEtage = etage;
-		this.superficie = superficie;
+		if(etage<0 || superficie<0) {
+			etage=0;
+			superficie=0.0;
+		}
+		else {
+			this.numEtage = etage;
+			this.superficie = superficie;
+		}
 	}
 	
 	/** Retourne le type de la pièce
